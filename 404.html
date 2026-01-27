@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stránka nenalezena | Lucie Kubiková</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-deep: #030303;
+            --accent-gold: #C9A96E;
+            --text-primary: #F5EBE0;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle background glow */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 500px;
+        }
+
+        .error-code {
+            font-family: 'Playfair Display', serif;
+            font-size: 8rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            line-height: 1;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+        }
+
+        .btn:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .links {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .links p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-credit {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            opacity: 0.5;
+            margin-top: 3rem;
+        }
+
+        .footer-credit a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-credit a:hover {
+            color: var(--accent-gold);
+        }
+
+        @media (max-width: 480px) {
+            .error-code {
+                font-size: 5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .links a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="error-code">404</div>
+        <h1>Stránka nenalezena</h1>
+        <p>
+            Omlouváme se, ale stránka, kterou hledáte, neexistuje nebo byla přesunuta.
+        </p>
+        <a class='btn' href='index.html'>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            Zpět na úvodní stránku
+        </a>
+
+        <div class="links">
+            <p>Nebo navštivte:</p>
+            <a href='index.html'>Úvodní stránka</a>
+            <a href='o-mne.html'>O mně</a>
+            <a href="gamewithin/">Game Within</a>
+        </div>
+
+        <p class="footer-credit">Web vytvořila <a href="https://zjanacova.cz" target="_blank">zjanacova.cz</a></p>
+    </div>
+</body>
+
+</html>

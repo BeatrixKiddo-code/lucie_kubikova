@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Within | Mentální koučink ve sportu</title>
+    <link rel="icon" type="image/png" href="images/favicon_gw.png">
+    <link rel="canonical" href="https://luciekubikova.cz/gamewithin/">
+    <meta name="description"
+        content="Tým zkušených profesionálů z oblasti sportu, mentálního koučinku, leadershipu a vzdělávání. Mentální hra rozhoduje o výsledku.">
+
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://luciekubikova.cz/gamewithin/">
+    <meta property="og:title" content="Game Within | Mentální koučink ve sportu">
+    <meta property="og:description"
+        content="Koučink pro sportovce, kteří vědí, že hlava rozhoduje víc než tělo. Práce s tlakem, soustředěním a výkonem ve chvílích, kdy záleží na vteřině.">
+    <meta property="og:image" content="https://luciekubikova.cz/images/og_gamewithin.png">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Lucie Kubiková - Leadership & Mental Performance Coach">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://luciekubikova.cz/gamewithin/">
+    <meta name="twitter:title" content="Game Within | Mentální koučink ve sportu">
+    <meta name="twitter:description"
+        content="Koučink pro sportovce, kteří vědí, že hlava rozhoduje víc než tělo. Práce s tlakem, soustředěním a výkonem ve chvílích, kdy záleží na vteřině.">
+    <meta name="twitter:image" content="https://luciekubikova.cz/images/gamewithin.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': {
+                            900: '#0f172a',
+                            800: '#1a2744',
+                            700: '#243352',
+                        },
+                        'gold': {
+                            DEFAULT: '#C9A96E',
+                            light: '#D4B87A',
+                            muted: '#A08850',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Montserrat', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles that complement Tailwind */
+        .hero-headline {
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            line-height: 0.95;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-image-wrapper {
+            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
+        }
+
+        /* Subtle grain texture overlay */
+        .grain-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        /* ========== REST OF PAGE STYLES ========== */
+        :root {
+            --bg-navy: #1a2744;
+            --bg-navy-light: #243352;
+            --bg-navy-dark: #0f172a;
+            --accent-gold: #C9A96E;
+            --accent-gold-light: #D4B87A;
+            --text-white: #FFFFFF;
+            --text-light: rgba(255, 255, 255, 0.9);
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --success: #4CAF50;
+            --error: #E57373;
+        }
+
+        /* ========== SECTIONS ========== */
+        section.page-section {
+            padding: 6rem 8%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section.page-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 5%;
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(201, 169, 110, 0.2), transparent);
+        }
+
+        section.page-section::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            left: -50px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid rgba(201, 169, 110, 0.08);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .section-alt {
+            background: var(--bg-navy-light);
+        }
+
+        .section-alt::after {
+            right: -50px;
+            left: auto;
+            bottom: 20%;
+        }
+
+        .section-dark {
+            background: var(--bg-navy-dark);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: var(--text-white);
+        }
+
+        .section-intro {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .section-intro p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .section-intro strong {
+            color: var(--text-light);
+        }
+
+        /* ========== TEAM ========== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .team-photo-placeholder {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: var(--bg-navy-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .team-photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover .team-photo-placeholder img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .team-info {
+            padding: 1.5rem;
+        }
+
+        .team-role {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+
+        .team-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ========== COACHING ========== */
+        .coaching-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .coaching-left h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .coaching-left p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .coaching-left p strong {
+            color: var(--text-light);
+        }
+
+        .coaching-benefits {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .coaching-benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .benefit-icon img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            filter: brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(10deg);
+            opacity: 0.8;
+        }
+
+        .benefit-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .benefit-text strong {
+            color: var(--text-white);
+            font-weight: 600;
+        }
+
+        .coaching-quote {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .coaching-quote blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+
+        .coaching-quote cite {
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            font-style: normal;
+        }
+
+        /* ========== SERVICES ========== */
+        .services-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .services-intro p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .service-icon {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .service-item span {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        /* ========== COMPARISON ========== */
+        .comparison-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .comparison-column h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--glass-border);
+        }
+
+        .comparison-column.is h3 {
+            color: var(--success);
+            border-color: var(--success);
+        }
+
+        .comparison-column.isnt h3 {
+            color: var(--error);
+            border-color: var(--error);
+        }
+
+        .comparison-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .comparison-icon.check {
+            background: rgba(76, 175, 80, 0.2);
+            color: var(--success);
+        }
+
+        .comparison-icon.cross {
+            background: rgba(229, 115, 115, 0.2);
+            color: var(--error);
+        }
+
+        .comparison-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 0.25rem;
+        }
+
+        .comparison-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ========== CONTACT SECTION ========== */
+        .contact-section {
+            background: #FFFFFF;
+            padding: 4rem 8%;
+            position: relative;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent-gold), transparent);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .contact-left h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--bg-navy-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .contact-left p {
+            color: #4a5568;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        .contact-form {
+            background: #f7fafc;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--bg-navy-dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.6rem 0.9rem;
+            font-size: 0.95rem;
+            font-family: 'Montserrat', sans-serif;
+            border: 2px solid #e2e8f0;
+            background: white;
+            color: var(--bg-navy-dark);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.1);
+        }
+
+        .form-group input:invalid:not(:placeholder-shown),
+        .form-group textarea:invalid:not(:placeholder-shown) {
+            border-color: #e53e3e;
+        }
+
+        .form-group input:valid:not(:placeholder-shown),
+        .form-group textarea:valid:not(:placeholder-shown) {
+            border-color: #48bb78;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--accent-gold);
+            color: var(--bg-navy-dark);
+            padding: 1rem 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid var(--accent-gold);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: transparent;
+            color: var(--accent-gold);
+        }
+
+        .submit-btn:active {
+            transform: translateY(1px);
+        }
+
+        .gdpr-checkbox {
+            margin-bottom: 1.5rem;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.85rem;
+            color: #4a5568;
+            cursor: pointer;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            accent-color: var(--accent-gold);
+            cursor: pointer;
+        }
+
+        .checkbox-label a {
+            color: var(--accent-gold);
+            text-decoration: underline;
+        }
+
+        .checkbox-label a:hover {
+            color: var(--accent-gold-light);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--bg-navy-dark);
+            border: 2px solid var(--accent-gold);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent-gold);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            padding: 3rem 8%;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            background: var(--bg-navy-dark);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-white);
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social a {
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-credit {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        .footer-credit a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-credit a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* ========== SCROLL TO TOP ========== */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-gold);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+            color: var(--bg-navy-dark);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(201, 169, 110, 0.4);
+        }
+
+        /* ========== COOKIE BANNER ========== */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-navy-dark);
+            border-top: 1px solid var(--glass-border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .cookie-banner.visible {
+            transform: translateY(0);
+        }
+
+        .cookie-banner p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .cookie-accept {
+            background: var(--accent-gold);
+            color: var(--bg-navy-dark);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cookie-accept:hover {
+            background: var(--accent-gold-light);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .coaching-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section.page-section {
+                padding: 4rem 6%;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .coaching-left h2 {
+                font-size: 2rem;
+            }
+
+            .contact-left h2 {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        .contact-left-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .cta-team-photo {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #C9A96E;
+            box-shadow: 0 4px 20px rgba(201, 169, 110, 0.15);
+            object-fit: cover;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-grid {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .contact-left-wrapper {
+                order: 1;
+            }
+
+            .contact-form {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-navy-900 font-display text-white/90 antialiased">
+
+
+    <div class="bg-navy-900/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-10">
+                <a class='text-xs text-white/40 hover:text-gold transition-colors duration-300 flex items-center gap-2'
+                    href='index.html'>
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                    Zpět na hlavní stránku
+                </a>
+                <div class="text-xs text-white/30 hidden sm:block">
+                    Mentální koučink ve sportu
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur-xl border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <a class='logo' href='./'>
+                    <img src="../images/game_within_logo.png" alt="Game Within" style="height: 100px; width: auto;">
+                </a>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#tym" class="text-sm text-white/60 hover:text-white transition-colors duration-300">Tým</a>
+                    <a href="#co-delame"
+                        class="text-sm text-white/60 hover:text-white transition-colors duration-300">Co děláme</a>
+                    <a href="#kontakt"
+                        class="px-5 py-2.5 bg-gold hover:bg-gold-light text-navy-900 text-sm font-bold uppercase tracking-wider transition-all duration-300">
+                        Kontakt
+                    </a>
+                </div>
+
+
+                <button class="md:hidden text-white p-2" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="hidden md:hidden bg-navy-800 border-t border-white/10" id="mobile-menu">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#tym" class="block text-white/70 hover:text-white">Tým</a>
+                <a href="#co-delame" class="block text-white/70 hover:text-white">Co děláme</a>
+                <a href="#kontakt"
+                    class="block px-5 py-3 bg-gold text-navy-900 font-bold text-center uppercase tracking-wider">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="relative min-h-[75vh] flex items-center overflow-hidden grain-overlay">
+
+        <div class="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900"></div>
+
+
+        <div
+            class="absolute top-1/2 right-0 w-[800px] h-[800px] -translate-y-1/2 translate-x-1/4 bg-gold/5 rounded-full blur-3xl">
+        </div>
+
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+
+
+                <div class="max-w-xl">
+
+                    <h1 class="font-display text-5xl lg:text-7xl font-semibold text-white tracking-wide mb-6">
+                        Game Within
+                    </h1>
+
+
+                    <p class="font-serif text-xl lg:text-2xl text-gold italic mb-6 leading-relaxed">
+                        Mentální koučink ve sportu
+                    </p>
+
+
+                    <p class="text-white/60 text-base leading-relaxed mb-8 max-w-[34rem]">
+                        Tým zkušených profesionálů z oblasti sportu a mentálního koučinku.
+                    </p>
+                    <p class="text-white/60 text-base leading-relaxed mb-8 max-w-[34rem]">
+                        Pomáháme sportovcům pracovat s hlavou ve chvílích, kdy rozhoduje výkon, tlak a vnitřní stabilita
+                    </p>
+                    <p class="text-white/60 text-base leading-relaxed mb-8 max-w-[34rem]">Game Within vychází z ověřeného
+                        přístupu mentálního koučování ve sportu, který má prokazatelný vliv na výkon, koncentraci,
+                        zvládání tlaku a dlouhodobý rozvoj sportovců.
+                        Dlouhodobě se ukazuje, že sportovci, kteří pracují s profesionálními kouči, dosahují lepších
+                        výsledků nejen ve výkonu, ale i v psychické odolnosti, návratu po chybě a stabilitě pod tlakem.
+                    </p>
+                    <p class="text-white/60 text-base leading-relaxed mb-8 max-w-[34rem]">Tento přístup přenášíme do praxe –
+                        do tréninků, závodů i zápasů.</p>
+
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#kontakt"
+                            class="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-light text-navy-900 font-bold uppercase tracking-wider text-sm transition-all duration-300 gold-glow hover:scale-105">
+                            Nezávazná konzultace
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="relative flex justify-center lg:justify-end">
+                    <div class="relative w-full max-w-md">
+
+                        <div class="absolute -top-6 -left-6 w-28 h-28 border border-gold/20 rounded-full"></div>
+                        <div class="absolute -bottom-3 -right-3 w-20 h-20 border border-gold/10 rounded-full"></div>
+
+
+                        <div
+                            class="absolute top-1/2 -left-10 w-20 h-px bg-gradient-to-r from-transparent to-gold/50 hidden lg:block">
+                        </div>
+
+
+                        <div class="hero-image-wrapper relative z-10">
+
+                            <div
+                                class="aspect-[3/4] max-h-[450px] bg-gradient-to-b from-navy-700/50 to-transparent rounded-t-full flex items-end justify-center overflow-hidden">
+                                <img src="../images/photo-155.webp" alt="Soustředěný sportovec"
+                                    class="w-full h-full object-cover object-top opacity-80 mix-blend-luminosity hover:opacity-100 hover:mix-blend-normal transition-all duration-500">
+                            </div>
+                        </div>
+
+
+                        <div
+                            class="absolute -left-2 top-1/3 bg-navy-800/90 backdrop-blur-sm border border-white/10 px-3 py-2 hidden lg:block">
+                            <div class="text-xl font-bold text-gold">1500+</div>
+                            <div class="text-[10px] text-white/50 uppercase tracking-wider">hodin koučinku</div>
+                        </div>
+
+                        <div
+                            class="absolute -right-2 bottom-1/4 bg-navy-800/90 backdrop-blur-sm border border-white/10 px-3 py-2 hidden lg:block">
+                            <div class="text-xl font-bold text-gold">3</div>
+                            <div class="text-[10px] text-white/50 uppercase tracking-wider">profesionálové</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-navy-800 to-transparent"></div>
+    </section>
+
+
+    <section class="page-section section-alt" id="tym">
+        <div class="section-header">
+            <span class="section-label">Náš tým</span>
+            <h2 class="section-title">Kdo za tím stojí</h2>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-photo-placeholder">
+                    <img src="../images/gamewithin-lucie.webp" alt="Lucie Kubiková" loading="lazy">
+                </div>
+                <div class="team-info">
+                    <div class="team-role">Reprezentantka ČR, koučka</div>
+                    <h3 class="team-name">Lucie Kubiková</h3>
+                    <p class="team-desc">Reprezentantka ČR ve vytrvalostním jezdectví. Práce s mentalitou šampiona a
+                        dlouhodobou výkonností.</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-photo-placeholder">
+                    <img src="../images/gamewithin-pavel.webp" alt="Pavel Hediler" loading="lazy">
+                </div>
+                <div class="team-info">
+                    <div class="team-role">Mentální kouč, PCC</div>
+                    <h3 class="team-name">Pavel Hediler</h3>
+                    <p class="team-desc">1000+ odkoučovaných hodin. Odbourávání strachu, posílení sebedůvěry, psychické
+                        odolnosti, práce s emocemi skrz vizualizace.</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-photo-placeholder">
+                    <img src="../images/gamewithin-ales.webp" alt="Aleš Hujik" loading="lazy">
+                </div>
+                <div class="team-info">
+                    <div class="team-role">Životní a sportovní kouč, trenér</div>
+                    <h3 class="team-name">Aleš Hujík</h3>
+                    <p class="team-desc">Dynamika týmu – trenér-hráč. Práce s myslí, tlakem, pochybnostmi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="page-section" id="co-je" style="background: var(--bg-navy);">
+        <div class="coaching-grid">
+            <div class="coaching-left">
+                <h2>Mentální koučink ve sportu</h2>
+                <p>Učí pracovat s myšlenkami, emocemi, soustředěním a rozhodováním.</p>
+                <p><strong>Mentální koučink = trénink hlavy.</strong></p>
+
+                <div class="coaching-quote">
+                    <blockquote>„Hlava určuje, jak dobře využiješ svůj talent. Není to jen o tom, co dokáže tvoje tělo,
+                        ale co mu dovolí tvoje mysl."</blockquote>
+                    <cite>- Dr. Bob Rotella</cite>
+                </div>
+            </div>
+
+            <div class="coaching-right">
+                <ul class="coaching-benefits">
+                    <li class="coaching-benefit">
+                        <div class="benefit-icon">
+                            <img src="../images/vektor-mozek.png" alt="Mozek" loading="lazy">
+                        </div>
+                        <div class="benefit-text">Naučí tě <strong>uklidnit se a zůstat v klidu</strong>, když jde do
+                            tuhého.</div>
+                    </li>
+                    <li class="coaching-benefit">
+                        <div class="benefit-icon">
+                            <img src="../images/vektor-sipka.png" alt="Šipka" loading="lazy">
+                        </div>
+                        <div class="benefit-text">Dá ti schopnost <strong>rychle se vrátit zpátky</strong>, když něco
+                            pokazíš.</div>
+                    </li>
+                    <li class="coaching-benefit">
+                        <div class="benefit-icon">
+                            <img src="../images/vektor-terc.png" alt="Terč" loading="lazy">
+                        </div>
+                        <div class="benefit-text">Pomůže ti <strong>zůstat motivovaný</strong>, i když je to těžké.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="page-section section-alt" id="co-delame">
+        <div class="section-header">
+            <span class="section-label">Co děláme</span>
+            <h2 class="section-title">Systém podpory, který propojuje</h2>
+        </div>
+
+        <div class="services-intro">
+            <p>Spojuje nás víra v to, že mentální hra rozhoduje o výsledku – v hlavě, ve sportu i v životě. Proto
+                vytváříme systém podpory, který propojuje:</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon"></div><span>Mentální odolnost</span>
+            </div>
+            <div class="service-item">
+                <div class="service-icon"></div><span>Vědomé vedení</span>
+            </div>
+            <div class="service-item">
+                <div class="service-icon"></div><span>Komunikace</span>
+            </div>
+            <div class="service-item">
+                <div class="service-icon"></div><span>Mediace: trenér – rodič – sportovec</span>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="page-section section-dark" id="co-je-neni">
+        <div class="section-header">
+            <span class="section-label">Důležité vědět</span>
+            <h2 class="section-title">Co je a není koučování</h2>
+        </div>
+
+        <div class="comparison-container">
+            <div class="comparison-grid">
+                <div class="comparison-column is">
+                    <h3>✓ Koučování je</h3>
+                    <div class="comparison-item">
+                        <div class="comparison-icon check">✓</div>
+                        <div class="comparison-content">
+                            <h4>Trénink hlavy</h4>
+                            <p>Rozvoj dovedností (soustředění, práce se stresem, vizualizace, sebemluva)</p>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-icon check">✓</div>
+                        <div class="comparison-content">
+                            <h4>Praktické a zaměřené na výkon</h4>
+                            <p>Hned použitelné v tréninku i na zápase</p>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-icon check">✓</div>
+                        <div class="comparison-content">
+                            <h4>Proces</h4>
+                            <p>Dlouhodobý trénink podobný fyzické přípravě</p>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-icon check">✓</div>
+                        <div class="comparison-content">
+                            <h4>Prevence i posílení</h4>
+                            <p>Není jen pro „ty, co mají problém"</p>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-icon check">✓</div>
+                        <div class="comparison-content">
+                            <h4>Partnerský vztah</h4>
+                            <p>Kouč neříká „jak žít", ale pomáhá sportovci najít vlastní řešení</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-column isnt">
+                    <h3>✗ Koučování není</h3>
+                    <div class="comparison-item">
+                        <div class="comparison-icon cross">✗</div>
+                        <div class="comparison-content">
+                            <h4>Trenérství</h4>
+                            <p>Kouč neučí techniku, taktiku ani netrénuje</p>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-icon cross">✗</div>
+                        <div class="comparison-content">
+                            <h4>Psychoterapie</h4>
+                            <p>Neřeší traumata nebo hluboké osobní problémy (může mít přesah)</p>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-icon cross">✗</div>
+                        <div class="comparison-content">
+                            <h4>Motivační přednáška</h4>
+                            <p>Nestačí slyšet citát, je třeba trénovat</p>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-icon cross">✗</div>
+                        <div class="comparison-content">
+                            <h4>Magie / ezoterika</h4>
+                            <p>Nejde o amulety ani tajemné rituály</p>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-icon cross">✗</div>
+                        <div class="comparison-content">
+                            <h4>Rychlý trik</h4>
+                            <p>Neexistuje zázračná věta, která vyhraje závod</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact-section" id="kontakt">
+        <div class="contact-grid">
+
+            <div class="contact-left-wrapper">
+                <img src="../images/image_c9c91b.webp" alt="Tým Game Within" class="cta-team-photo" loading="lazy">
+
+            </div>
+
+            <div class="contact-form">
+                <div class="contact-left">
+                    <h2>Připraveni na mentální posun?</h2>
+                    <p>
+                        Domluvme si nezávaznou konzultaci a probereme, jak vám můžeme pomoci. Stačí vyplnit formulář
+                        a my se vám ozveme do 24 hodin.
+                    </p>
+                </div>
+
+                <form action="https://formspree.io/f/xvzzbggo" method="POST">
+                    <div class="form-group">
+                        <label for="name">Jméno *</label>
+                        <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="vas@email.cz" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+420 123 456 789">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Zpráva *</label>
+                        <textarea id="message" name="message"
+                            placeholder="Popište nám vaši situaci nebo položte otázku..." required></textarea>
+                    </div>
+
+                    <div class="form-group gdpr-checkbox">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="gdpr" required>
+                            <span>Souhlasím se <a href="gdpr.html" target="_blank">zpracováním osobních
+                                    údajů</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Odeslat zprávu
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://coachville.eu/coach/lucie-kubikova/" target="_blank">CoachVille</a>
+            <a href='index.html#test'>Test vnitřních brzd</a>
+            <a href='gdpr.html'>Ochrana osobních údajů</a>
+        </div>
+        <div class="footer-social">
+            <a href="/cdn-cgi/l/email-protection#0b677e68607e6962603a384b6c666a626725686466" aria-label="Email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+            </a>
+            <a href="https://wa.me/420703144351" target="_blank" aria-label="WhatsApp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/lucie-kubiková-29b046177/" target="_blank" aria-label="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/plamen_koucky_lucie/" target="_blank" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                </svg>
+            </a>
+        </div>
+        <p class="footer-copy">© <span id="current-year"></span> Game Within | Lucie Kubiková, Pavel Hediler, Aleš Hujík
+        </p>
+        <p class="footer-credit">Web vytvořila <a href="https://zjanacova.cz" target="_blank">zjanacova.cz</a></p>
+    </footer>
+
+
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll nahoru">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+
+
+    <div id="cookieBanner" class="cookie-banner">
+        <p>Tento web používá cookies pro zlepšení vašeho zážitku. <a href='gdpr.html'
+                style='color: var(--accent-gold);'>Více info</a></p>
+        <button id="acceptCookies" class="cookie-accept">Rozumím</button>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        const scrollBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptCookies = document.getElementById('acceptCookies');
+        if (!localStorage.getItem('cookiesAccepted')) {
+            cookieBanner.classList.add('visible');
+        }
+        acceptCookies.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieBanner.classList.remove('visible');
+        });
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
