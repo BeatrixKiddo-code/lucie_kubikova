@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://luciekubikova.cz/</loc>
+    <lastmod>2025-01-29</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://luciekubikova.cz/o-mne.html</loc>
+    <lastmod>2025-01-29</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://luciekubikova.cz/gamewithin/</loc>
+    <lastmod>2025-01-29</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://luciekubikova.cz/gdpr.html</loc>
+    <lastmod>2025-01-29</lastmod>
     <priority>0.3</priority>
   </url>
 </urlset>
