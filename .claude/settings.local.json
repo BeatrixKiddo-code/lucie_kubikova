@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nPrepare for production: fix typos, optimize images, improve SEO\n\n- Convert images to WebP format for better performance\n- Add robots.txt and sitemap.xml to root directory\n- Fix typos in text content and meta tags\n- Remove hardcoded date from Reenio booking links\n- Remove unnecessary Cloudflare email-decode script\n- Add meta robots tag, fix LinkedIn URL in JSON-LD\n- Restructure hero grid layout\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(git pull:*)"
+    ]
+  }
+}
