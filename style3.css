@@ -488,6 +488,7 @@ nav .logo img {
     max-width: 470px;
     text-align: right;
     white-space: nowrap;
+    text-shadow: 2px 2px 3px var(--bg-deep);
 }
 
 .hero-cta {
