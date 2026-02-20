@@ -481,6 +481,7 @@ nav .logo img {
     margin-bottom: 3rem;
     max-width: 500px;
     font-weight: 400;
+    text-shadow: 2px 2px 3px var(--bg-deep);
 }
 
 .hero-content .hero-headline .line-3 {
@@ -3212,7 +3213,6 @@ blockquote em {
 
     .hero-content p {
         margin-bottom: 2.5rem;
-        text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
         margin-left: 0;
         margin-right: 0;
         width: 100%;
@@ -3440,7 +3440,6 @@ blockquote em {
 
     .hero-content p {
         margin-bottom: 2.5rem;
-        text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
     }
 
     .hero-cta {
@@ -3616,6 +3615,7 @@ blockquote em {
     letter-spacing: -0.01em;
     margin-bottom: 2rem;
     color: var(--text-primary);
+    text-shadow: 2px 2px 3px var(--bg-deep);
 }
 
 .hero-content .hero-headline span {
@@ -3653,7 +3653,6 @@ blockquote em {
     .hero-content .hero-headline {
         font-size: 3.4rem;
         margin-bottom: 3.5rem;
-        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
         width: 100%;
     }
 
@@ -3677,7 +3676,6 @@ blockquote em {
     .hero-content .hero-headline {
         font-size: 2.4rem;
         margin-bottom: 2rem;
-        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
     }
 
     .hero-content .hero-headline span {
