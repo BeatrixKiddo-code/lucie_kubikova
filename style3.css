@@ -474,6 +474,15 @@ nav .logo img {
     flex-direction: column;
 }
 
+@media (min-width: 1440px) {
+    .hero-grid {
+        max-width: 1600px;
+    }
+    .hero-wrapper {
+        max-width: 1600px;
+    }
+}
+
 .hero-content {
     grid-column: 1;
     grid-row: 2;
