@@ -4516,3 +4516,30 @@ nav .logo img {
         color: #E8B878;
     }
 }
+
+/* --- Hero na mobilu -----------------------------------------------------
+   Fotka zabírala při výšce 50 % zhruba 61 % šířky displeje, takže jí text
+   ležel přes obličej. Zdroj má navíc jen 407x612 px, takže se roztahoval
+   skoro 3x a byl měkký. Zmenšení řeší obojí najednou.                   */
+@media (max-width: 768px) {
+    .hero-image {
+        height: 48%;
+    }
+
+    /* zlatý popisek leží přes fotku a stín rgba(0,0,0,0.3) na to nestačí */
+    .hero-label-fixed {
+        text-shadow: 0 1px 2px var(--bg-deep), 0 2px 14px rgba(3, 3, 3, 0.95);
+    }
+}
+
+@media (max-width: 510px) {
+    .hero-image {
+        height: 46%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-image {
+        height: 42%;
+    }
+}
