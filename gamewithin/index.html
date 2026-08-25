@@ -223,7 +223,7 @@
             transition: all 0.3s ease;
         }
 
-        .team-card:hover .team-photo-placeholder img {
+        .team-card:hover.team-photo-placeholder img {
             filter: grayscale(0%);
             transform: scale(1.05);
         }
@@ -976,16 +976,23 @@
                         Tým zkušených profesionálů z oblasti sportu a mentálního koučinku.
                     </p>
                     <p class="text-white/60 text-base leading-relaxed mb-8 max-w-[34rem]">
-                        Pomáháme sportovcům pracovat s hlavou ve chvílích, kdy rozhoduje výkon, tlak a vnitřní stabilita
+                        Pracujeme se sportovci na tom, jak fungovat hlavou ve chvílích, kdy rozhoduje výkon, tlak
+                        a vnitřní stabilita.
                     </p>
-                    <p class="text-white/60 text-base leading-relaxed mb-8 max-w-[34rem]">Game Within vychází z ověřeného
-                        přístupu mentálního koučování ve sportu, který má prokazatelný vliv na výkon, koncentraci,
-                        zvládání tlaku a dlouhodobý rozvoj sportovců.
-                        Dlouhodobě se ukazuje, že sportovci, kteří pracují s profesionálními kouči, dosahují lepších
-                        výsledků nejen ve výkonu, ale i v psychické odolnosti, návratu po chybě a stabilitě pod tlakem.
+                    <p class="text-white/60 text-base leading-relaxed mb-8 max-w-[34rem]">Game Within vychází
+                        z metod mentálního koučování ve sportu, které pracují s koncentrací, zvládáním tlaku
+                        a dlouhodobým rozvojem sportovce.
+                        Ze zkušenosti našich klientů se posun nejčastěji projeví v psychické odolnosti, v návratu po
+                        chybě a ve stabilitě ve chvíli, kdy roste tlak.
                     </p>
                     <p class="text-white/60 text-base leading-relaxed mb-8 max-w-[34rem]">Tento přístup přenášíme do praxe –
                         do tréninků, závodů i zápasů.</p>
+                    <p class="text-white/60 text-base leading-relaxed mb-8 max-w-[34rem]">
+                        Sport je pro nás druhá laboratoř téhož: výkon, tlak, rozhodování a týmová dynamika.
+                        Stejnou expertizu vnáší Lucie Kubiková i do práce s lídry a firemními týmy –
+                        <a href="../pro-firmy.html" class="text-gold hover:text-gold-light underline">podívejte se, jak
+                            to vypadá ve firmách</a>.
+                    </p>
 
 
                     <div class="flex flex-col sm:flex-row gap-4">
@@ -1056,10 +1063,12 @@
                     <img src="../images/gamewithin-lucie.webp" alt="Lucie Kubiková" loading="lazy">
                 </div>
                 <div class="team-info">
-                    <div class="team-role">Reprezentantka ČR, koučka</div>
+                    <div class="team-role">Leadership &amp; Mental Performance Coach, PCC</div>
                     <h3 class="team-name">Lucie Kubiková</h3>
-                    <p class="team-desc">Reprezentantka ČR ve vytrvalostním jezdectví. Práce s mentalitou šampiona a
-                        dlouhodobou výkonností.</p>
+                    <p class="team-desc">Reprezentantka ČR ve vytrvalostním jezdectví. Práce s mentalitou šampiona
+                        a dlouhodobou výkonností. Stejná témata &ndash; výkon, tlak a rozhodování &ndash; řeší
+                        <a href="../index.html" class="text-gold hover:text-gold-light underline">s lídry a týmy ve
+                            firmách</a>.</p>
                 </div>
             </div>
 
@@ -1292,7 +1301,7 @@
                     <div class="form-group gdpr-checkbox">
                         <label class="checkbox-label">
                             <input type="checkbox" name="gdpr" required>
-                            <span>Souhlasím se <a href="gdpr.html" target="_blank">zpracováním osobních
+                            <span>Souhlasím se <a href="../gdpr.html" target="_blank">zpracováním osobních
                                     údajů</a></span>
                         </label>
                     </div>
@@ -1308,8 +1317,9 @@
     <footer>
         <div class="footer-links">
             <a href="https://coachville.eu/coach/lucie-kubikova/" target="_blank">CoachVille</a>
-            <a href='index.html#test'>Test vnitřních brzd</a>
-            <a href='gdpr.html'>Ochrana osobních údajů</a>
+            <a href="../index.html">Lucie Kubiková</a>
+            <a href="../pro-firmy.html">Pro firmy</a>
+            <a href="../gdpr.html">Ochrana osobních údajů</a>
         </div>
         <div class="footer-social">
             <a href="mailto:kontakt@luciekubikova.cz" aria-label="Email">
@@ -1351,12 +1361,11 @@
 
 
     <div id="cookieBanner" class="cookie-banner">
-        <p>Tento web používá cookies pro zlepšení vašeho zážitku. <a href='gdpr.html'
+        <p>Tento web používá cookies pro zlepšení vašeho zážitku. <a href="../gdpr.html"
                 style='color: var(--accent-gold);'>Více info</a></p>
         <button id="acceptCookies" class="cookie-accept">Rozumím</button>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
