@@ -4075,43 +4075,55 @@ main a:hover {
     line-height: 1.5;
 }
 
-/* --- Odznak certifikace ICF/PCC --- */
-.cert-badge {
+/* --- Certifikace ICF/PCC jako součást statistik --- */
+.stat-cert {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    margin-top: 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--glass-border);
+    gap: 1rem;
 }
 
-.cert-badge img {
-    width: 96px;
+.stat-cert-logo {
+    width: 76px;
     height: auto;
     flex-shrink: 0;
 }
 
-.cert-badge-text {
-    font-size: 0.85rem;
-    line-height: 1.6;
+.stat-cert-label {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
     color: var(--text-secondary);
-    margin: 0;
+    text-transform: none;
 }
 
-.cert-badge-text strong {
+.stat-cert-label strong {
     display: block;
-    margin-bottom: 0.25rem;
-    font-size: 0.9rem;
+    margin-bottom: 0.15rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--accent-gold);
 }
 
-@media (max-width: 600px) {
-    .cert-badge {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
+/* --- Navigace ---------------------------------------------------------
+   Logo je 554x95 px, takže při výšce 80 px zabírá 466 px. Se šesti
+   položkami se řádek vejde až od ~1500 px – níž se lámaly popisky
+   i CTA tlačítko. Logo, mezery i odsazení proto plynule zmenšujeme.   */
+nav {
+    gap: clamp(1rem, 2.5vw - 10px, 2rem);
+    padding: 0.5rem clamp(1.75rem, 20.5vw - 180px, 8%);
+}
+
+nav .logo img {
+    height: clamp(42px, 7vw - 29px, 80px);
+}
+
+.nav-links {
+    flex-wrap: nowrap;
+    gap: clamp(0.9rem, 3.4vw - 18px, 3rem);
+}
+
+.nav-links a {
+    white-space: nowrap;
 }
 
 /* ==========================================================================
@@ -4260,4 +4272,30 @@ main a:hover {
 
 .reference-static .reference-card {
     position: relative;
+}
+
+/* --- Statistiky "O mně" na malých displejích: nechat je zalomit,
+       ať se dlouhé popisky a certifikační odznak nemačkají do sloupečků --- */
+@media (max-width: 768px) {
+    .education-stats {
+        flex-wrap: wrap;
+        gap: 2rem 1.5rem;
+    }
+
+    .education-stats .stat {
+        flex: 1 1 130px;
+        min-width: 130px;
+    }
+
+    .education-stats .stat-cert {
+        flex: 1 1 100%;
+        justify-content: center;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-cert-logo {
+        width: 64px;
+    }
 }
