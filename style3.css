@@ -4079,19 +4079,19 @@ main a:hover {
 
 /* --- Certifikace v bloku "O mně" --- */
 .about-content .about-role {
-    margin-bottom: 0.5rem;
-}
-
-.about-content .about-cert {
-    font-size: 0.85rem;
-    letter-spacing: 0.03em;
-    color: var(--accent-gold-muted);
     margin-bottom: 1.75rem;
 }
 
 .about-stats {
     flex-wrap: wrap;
     gap: 2rem 2.5rem;
+}
+
+/* do 768 px je .about-stats sloupec s vlastním odstupem – nepřepisovat ho */
+@media (max-width: 768px) {
+    .about-stats {
+        gap: 1.5rem;
+    }
 }
 
 .about-stats .stat {
@@ -4103,6 +4103,31 @@ main a:hover {
 .about-stats .stat-label {
     letter-spacing: 0.06em;
     line-height: 1.5;
+}
+
+/* Certifikace na vlastním řádku pod čísly. Sloupec s textem má vedle fotky
+   jen ~530 px, takže tři dlaždice s logem vedle sebe se tam nevejdou. */
+.about-stats .stat-cert {
+    flex: 1 1 100%;
+    max-width: none;
+    text-align: left;
+    margin-top: 0.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.about-stats .stat-cert-logo {
+    width: 64px;
+}
+
+.cert-note {
+    display: block;
+    margin-top: 0.45rem;
+    font-size: 0.72rem;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    color: var(--text-muted);
 }
 
 /* --- Certifikace ICF/PCC jako součást statistik --- */
