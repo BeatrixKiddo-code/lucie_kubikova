@@ -133,6 +133,27 @@ p {
     }
 }
 
+/* Blob má fixní velikost v px, takže na úzkém displeji i s rozostřením
+   pokryje celou obrazovku a z aurory je plošný tón místo světelné skvrny.
+   Zmenšujeme proto blob i rozostření; opacity jde nahoru, aby menší
+   plocha měla podobnou přítomnost. */
+@media (max-width: 900px) {
+    .aurora-blob {
+        opacity: 0.06;
+        filter: blur(90px);
+    }
+
+    .aurora-blob.rose {
+        width: 340px;
+        height: 340px;
+    }
+
+    .aurora-blob.gold {
+        width: 260px;
+        height: 260px;
+    }
+}
+
 
 .shards-container {
     position: fixed;
