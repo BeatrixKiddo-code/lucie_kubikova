@@ -3919,6 +3919,15 @@ main a:hover {
     text-transform: uppercase;
 }
 
+/* .hero-content p má vyšší specificitu a přebíjelo velikost i odsazení */
+.hero-content .cta-note {
+    max-width: none;
+    margin-bottom: 0;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    text-shadow: none;
+}
+
 /* --- Sekce "Možná to znáte" --- */
 .known-list {
     list-style: none;
@@ -4247,6 +4256,10 @@ nav .logo img {
 }
 
 .page-hero-split .hero-content {
+    /* .hero-content má kvůli hlavnímu heru natvrdo grid-column: 1 a grid-row: 2;
+       bez tohoto resetu spadnou oba sloupce pod sebe a fotka vyskočí nad text */
+    grid-column: auto;
+    grid-row: auto;
     max-width: none;
 }
 
