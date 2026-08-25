@@ -51,7 +51,7 @@
     </script>
 </head>
 
-<body>
+<body class="page-firmy">
 
     <div class="aurora">
         <div class="aurora-blob rose"></div>
@@ -87,15 +87,30 @@
     </nav>
 
 
-    <section class="page-hero">
-        <div class="hero-content">
-            <div class="hero-label">Leadership &amp; Mental Performance Coach</div>
-            <h1>Pro firmy</h1>
-            <p class="hero-subtitle">
-                Ve firmách často nebývá problém v tom, že lidé nevědí, co mají dělat. Problém vzniká ve chvíli, kdy
-                tlak, růst nebo změna odkryjí nejasné role, přetížené vedení, nefunkční komunikaci nebo chybějící
-                odpovědnost.
-            </p>
+    <section class="page-hero page-hero-split">
+        <div class="page-hero-grid">
+            <div class="hero-content">
+                <div class="hero-label">Leadership &amp; Mental Performance Coach</div>
+                <h1>Pro firmy</h1>
+                <p class="hero-subtitle">
+                    Ve firmách často nebývá problém v tom, že lidé nevědí, co mají dělat. Problém vzniká ve chvíli, kdy
+                    tlak, růst nebo změna odkryjí nejasné role, přetížené vedení, nefunkční komunikaci nebo chybějící
+                    odpovědnost.
+                </p>
+                <div class="hero-cta">
+                    <a href="https://luciekubikova.reenio.cz/cs/terms/viewMode=dayLucie" class="btn btn-primary"
+                        target="_blank">
+                        Domluvit úvodní rozhovor
+                    </a>
+                    <a href="#mapa-tymove-dynamiky" class="btn btn-secondary">
+                        Mapa týmové dynamiky
+                    </a>
+                </div>
+                <p class="cta-note">30 minut &bull; nezávazně &bull; online</p>
+            </div>
+            <div class="page-hero-image">
+                <img src="images/office.webp" alt="Lucie Kubiková při práci s týmem ve firmě" class="page-hero-photo">
+            </div>
         </div>
     </section>
 
@@ -138,12 +153,20 @@
             <h2 class="section-title">Formy spolupráce</h2>
         </div>
 
-        <ul class="forms-list">
-            <li>1:1 spolupráce s CEO / founderem / manažerem</li>
-            <li>práce s management týmem</li>
-            <li>Mapa týmové dynamiky + navazující práce</li>
-            <li>cílený workshop nebo firemní program</li>
-        </ul>
+        <ol class="forms-steps">
+            <li>
+                <h3>1:1 spolupráce s CEO, founderem nebo manažerem</h3>
+            </li>
+            <li>
+                <h3>Práce s management týmem</h3>
+            </li>
+            <li>
+                <h3>Mapa týmové dynamiky a navazující práce</h3>
+            </li>
+            <li>
+                <h3>Cílený workshop nebo firemní program</h3>
+            </li>
+        </ol>
     </section>
 
 
@@ -158,23 +181,46 @@
             Je to vstupní pohled, který umožní přesněji určit, co se děje pod povrchem a na čem má smysl pracovat.
         </p>
 
-        <div class="map-grid">
-            <div class="map-card">
-                <h3>Energie &amp; tah</h3>
-            </div>
-            <div class="map-card">
-                <h3>Komunikace &amp; důvěra</h3>
-            </div>
-            <div class="map-card">
-                <h3>Role &amp; vliv</h3>
-            </div>
-            <div class="map-card">
-                <h3>Reakce na tlak</h3>
-            </div>
-            <div class="map-card">
-                <h3>Motivace &amp; směr</h3>
-            </div>
+        <div class="map-diagram" role="img"
+            aria-label="Mapa týmové dynamiky – pět oblastí, na které se v týmu dívám: energie a tah, komunikace a důvěra, role a vliv, reakce na tlak, motivace a směr.">
+            <svg viewBox="20 48 772 424" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                <g class="map-rings">
+                    <polygon points="380,120 536.9,234 477,418.5 283,418.5 223.1,234" />
+                    <polygon points="380,176.1 483.6,251.4 444,373.1 316,373.1 276.4,251.4" />
+                    <polygon points="380,230.6 431.8,268.2 412,329.1 348,329.1 328.2,268.2" />
+                </g>
+                <g class="map-spokes">
+                    <line x1="380" y1="285" x2="380" y2="120" />
+                    <line x1="380" y1="285" x2="536.9" y2="234" />
+                    <line x1="380" y1="285" x2="477" y2="418.5" />
+                    <line x1="380" y1="285" x2="283" y2="418.5" />
+                    <line x1="380" y1="285" x2="223.1" y2="234" />
+                </g>
+                <circle class="map-hub" cx="380" cy="285" r="6" />
+                <g class="map-nodes">
+                    <circle cx="380" cy="120" r="9" />
+                    <circle cx="536.9" cy="234" r="9" />
+                    <circle cx="477" cy="418.5" r="9" />
+                    <circle cx="283" cy="418.5" r="9" />
+                    <circle cx="223.1" cy="234" r="9" />
+                </g>
+                <g class="map-labels">
+                    <text x="380" y="86" text-anchor="middle">Energie &amp; tah</text>
+                    <text x="563" y="230" text-anchor="start">Komunikace &amp; důvěra</text>
+                    <text x="497" y="449" text-anchor="start">Role &amp; vliv</text>
+                    <text x="263" y="449" text-anchor="end">Reakce na tlak</text>
+                    <text x="197" y="230" text-anchor="end">Motivace &amp; směr</text>
+                </g>
+            </svg>
         </div>
+
+        <ul class="map-list">
+            <li>Energie &amp; tah</li>
+            <li>Komunikace &amp; důvěra</li>
+            <li>Role &amp; vliv</li>
+            <li>Reakce na tlak</li>
+            <li>Motivace &amp; směr</li>
+        </ul>
 
         <p class="map-note">
             Není to univerzální test ani nálepka na lidi. Je to způsob, jak se dívám na fungování týmu &ndash; a
