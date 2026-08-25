@@ -4087,10 +4087,20 @@ main a:hover {
     gap: 2rem 2.5rem;
 }
 
-/* do 768 px je .about-stats sloupec s vlastním odstupem – nepřepisovat ho */
+/* do 768 px je .about-stats sloupec s vlastním odstupem – nepřepisovat ho.
+   Pozor: existující justify-content: center u sloupce řeší svislou osu,
+   na vodorovné vystředění je potřeba align-items. */
 @media (max-width: 768px) {
     .about-stats {
         gap: 1.5rem;
+        align-items: center;
+    }
+
+    /* certifikace zůstane přes celou šířku kvůli oddělovací lince,
+       ale logo s textem se uvnitř vystředí jako celek */
+    .about-stats .stat-cert {
+        align-self: stretch;
+        justify-content: center;
     }
 }
 
