@@ -4236,6 +4236,26 @@ nav .logo img {
     height: 780px;
 }
 
+/* Blob o průměru 900 px pokryje úzký displej celý, takže z aurory
+   je plošný hnědý filtr přes celou stránku. Na mobilu proto blob
+   i rozostření zmenšíme, ať zůstane světelnou skvrnou v rohu. */
+@media (max-width: 900px) {
+    .page-firmy .aurora-blob {
+        opacity: 0.08;
+        filter: blur(90px);
+    }
+
+    .page-firmy .aurora-blob.rose {
+        width: 380px;
+        height: 380px;
+    }
+
+    .page-firmy .aurora-blob.gold {
+        width: 320px;
+        height: 320px;
+    }
+}
+
 /* --- Hero na dva sloupce --- */
 .page-hero-split {
     min-height: auto;
