@@ -133,6 +133,27 @@ p {
     }
 }
 
+/* Blob má fixní velikost v px, takže na úzkém displeji i s rozostřením
+   pokryje celou obrazovku a z aurory je plošný tón místo světelné skvrny.
+   Zmenšujeme proto blob i rozostření; opacity jde nahoru, aby menší
+   plocha měla podobnou přítomnost. */
+@media (max-width: 900px) {
+    .aurora-blob {
+        opacity: 0.06;
+        filter: blur(90px);
+    }
+
+    .aurora-blob.rose {
+        width: 340px;
+        height: 340px;
+    }
+
+    .aurora-blob.gold {
+        width: 260px;
+        height: 260px;
+    }
+}
+
 
 .shards-container {
     position: fixed;
@@ -3704,6 +3725,7 @@ blockquote em {
 }
 
 @media (max-width: 1024px) {
+    .hero .seo-title {
         top: 110px;
         left: 6%;
         font-size: 0.7rem;
@@ -3902,4 +3924,657 @@ main a:hover {
 
 .contact-alternative a:hover {
     text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   ÚPRAVY 08/2026 — nové sekce, 4 cesty spolupráce, stránka Pro firmy
+   ========================================================================== */
+
+/* --- Poznámka pod hlavním CTA (30 minut • nezávazně • online) --- */
+.cta-note {
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* .hero-content p má vyšší specificitu a přebíjelo velikost i odsazení */
+.hero-content .cta-note {
+    max-width: none;
+    margin-bottom: 0;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    text-shadow: none;
+}
+
+/* --- Sekce "Možná to znáte" --- */
+.known-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.known-list li {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-left: 2px solid var(--accent-gold);
+    backdrop-filter: blur(10px);
+    padding: 1.25rem 1.5rem;
+    color: var(--text-body);
+    font-size: 0.98rem;
+    line-height: 1.65;
+    transition: border-color 0.4s ease, transform 0.4s ease;
+}
+
+.known-list li:hover {
+    border-color: var(--glass-border-hover);
+    border-left-color: var(--accent-gold-light);
+    transform: translateY(-2px);
+}
+
+/* lichý počet položek – poslední se roztáhne přes obě sloupce */
+.known-list li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+}
+
+/* --- Sekce "Co se má změnit" --- */
+.change-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.change-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 0.9rem 0;
+    color: var(--text-body);
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.change-list li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 0.3rem;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9A96E' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+@media (max-width: 768px) {
+
+    .known-list,
+    .change-list {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .known-list li:last-child:nth-child(odd) {
+        grid-column: auto;
+    }
+}
+
+/* --- Nabídka: čtyři cesty spolupráce --- */
+.services-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1320px;
+    gap: 1.25rem;
+}
+
+.service-card .service-for {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 0.9rem;
+}
+
+@media (max-width: 1200px) {
+    .services-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 820px;
+    }
+}
+
+@media (max-width: 640px) {
+    .services-grid-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Reference: víceodstavcové citace --- */
+.reference-item {
+    display: flex;
+}
+
+.reference-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.reference-card .reference-quote {
+    flex: 1 1 auto;
+}
+
+.reference-quote p {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    margin-bottom: 1rem;
+}
+
+.reference-quote p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Certifikace v bloku "O mně" --- */
+.about-content .about-role {
+    margin-bottom: 1.75rem;
+}
+
+.about-stats {
+    flex-wrap: wrap;
+    gap: 2rem 2.5rem;
+}
+
+/* do 768 px je .about-stats sloupec s vlastním odstupem – nepřepisovat ho.
+   Pozor: existující justify-content: center u sloupce řeší svislou osu,
+   na vodorovné vystředění je potřeba align-items. */
+@media (max-width: 768px) {
+    .about-stats {
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    /* certifikace zůstane přes celou šířku kvůli oddělovací lince,
+       ale logo s textem se uvnitř vystředí jako celek */
+    .about-stats .stat-cert {
+        align-self: stretch;
+        justify-content: center;
+    }
+}
+
+.about-stats .stat {
+    flex: 1 1 150px;
+    min-width: 150px;
+    max-width: 230px;
+}
+
+.about-stats .stat-label {
+    letter-spacing: 0.06em;
+    line-height: 1.5;
+}
+
+/* Certifikace na vlastním řádku pod čísly. Sloupec s textem má vedle fotky
+   jen ~530 px, takže tři dlaždice s logem vedle sebe se tam nevejdou. */
+.about-stats .stat-cert {
+    flex: 1 1 100%;
+    max-width: none;
+    text-align: left;
+    margin-top: 0.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.about-stats .stat-cert-logo {
+    width: 64px;
+}
+
+.cert-note {
+    display: block;
+    margin-top: 0.45rem;
+    font-size: 0.72rem;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    color: var(--text-muted);
+}
+
+/* --- Certifikace ICF/PCC jako součást statistik --- */
+.stat-cert {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stat-cert-logo {
+    width: 76px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.stat-cert-label {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary);
+    text-transform: none;
+}
+
+.stat-cert-label strong {
+    display: block;
+    margin-bottom: 0.15rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+}
+
+/* --- Navigace ---------------------------------------------------------
+   Logo je 554x95 px, takže při výšce 80 px zabírá 466 px. Se šesti
+   položkami se řádek vejde až od ~1500 px – níž se lámaly popisky
+   i CTA tlačítko. Logo, mezery i odsazení proto plynule zmenšujeme.   */
+nav {
+    gap: clamp(1rem, 2.5vw - 10px, 2rem);
+    padding: 0.5rem clamp(1.75rem, 20.5vw - 180px, 8%);
+}
+
+nav .logo img {
+    height: clamp(42px, 7vw - 29px, 80px);
+}
+
+.nav-links {
+    flex-wrap: nowrap;
+    gap: clamp(0.9rem, 3.4vw - 18px, 3rem);
+}
+
+.nav-links a {
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   STRÁNKA "PRO FIRMY"
+   ========================================================================== */
+
+.lead-text {
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.85;
+    color: var(--text-light);
+}
+
+.lead-text:last-child {
+    margin-bottom: 0;
+}
+
+.lead-text.accent {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--text-primary);
+}
+
+/* --- Formy spolupráce --- */
+/* --- Mapa týmové dynamiky --- */
+.map-intro {
+    max-width: 780px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text-light);
+}
+
+.map-note {
+    max-width: 780px;
+    margin: 2.5rem auto 0;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+}
+
+/* --- Reference na podstránkách (mimo karusel) --- */
+.reference-static {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.reference-static .reference-card {
+    position: relative;
+}
+
+/* --- Statistiky "O mně" na malých displejích: nechat je zalomit,
+       ať se dlouhé popisky a certifikační odznak nemačkají do sloupečků --- */
+@media (max-width: 768px) {
+    .education-stats {
+        flex-wrap: wrap;
+        gap: 2rem 1.5rem;
+    }
+
+    .education-stats .stat {
+        flex: 1 1 130px;
+        min-width: 130px;
+    }
+
+    .education-stats .stat-cert {
+        flex: 1 1 100%;
+        justify-content: center;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-cert-logo {
+        width: 64px;
+    }
+}
+
+/* ==========================================================================
+   PRO FIRMY — hero s fotkou, číslované formy spolupráce, diagram mapy
+   ========================================================================== */
+
+/* --- Výraznější aurora jen na této stránce --- */
+.page-firmy .aurora-blob {
+    opacity: 0.1;
+}
+
+.page-firmy .aurora-blob.rose {
+    width: 900px;
+    height: 900px;
+}
+
+.page-firmy .aurora-blob.gold {
+    width: 780px;
+    height: 780px;
+}
+
+/* Blob o průměru 900 px pokryje úzký displej celý, takže z aurory
+   je plošný hnědý filtr přes celou stránku. Na mobilu proto blob
+   i rozostření zmenšíme, ať zůstane světelnou skvrnou v rohu. */
+@media (max-width: 900px) {
+    .page-firmy .aurora-blob {
+        opacity: 0.08;
+        filter: blur(90px);
+    }
+
+    .page-firmy .aurora-blob.rose {
+        width: 380px;
+        height: 380px;
+    }
+
+    .page-firmy .aurora-blob.gold {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+/* --- Hero na dva sloupce --- */
+.page-hero-split {
+    min-height: auto;
+    padding: 9rem 8% 5rem;
+    text-align: left;
+}
+
+.page-hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.page-hero-split .hero-content {
+    /* .hero-content má kvůli hlavnímu heru natvrdo grid-column: 1 a grid-row: 2;
+       bez tohoto resetu spadnou oba sloupce pod sebe a fotka vyskočí nad text */
+    grid-column: auto;
+    grid-row: auto;
+    max-width: none;
+}
+
+.page-hero-split .hero-label {
+    margin-bottom: 1.5rem;
+}
+
+.page-hero-split .hero-subtitle {
+    max-width: 34rem;
+    margin: 0 0 2.5rem;
+}
+
+.page-hero-split .cta-note {
+    margin-top: 1.25rem;
+}
+
+.page-hero-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+    filter: drop-shadow(0 18px 45px rgba(0, 0, 0, 0.55)) grayscale(15%);
+    opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+    .page-hero-split {
+        padding: 8rem 6% 4rem;
+        text-align: center;
+    }
+
+    .page-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .page-hero-split .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-hero-split .hero-cta {
+        justify-content: center;
+    }
+}
+
+/* --- Formy spolupráce: číslované položky --------------------------------
+   Čísla slouží k orientaci a rytmu, ne jako postup krok za krokem –
+   proto tu nejsou spojnice mezi položkami.                              */
+.forms-steps {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    counter-reset: forma;
+}
+
+.forms-steps li {
+    padding: 2rem 1.25rem 1.75rem;
+    border-top: 1px solid var(--glass-border);
+    transition: border-color 0.4s ease;
+}
+
+.forms-steps li::before {
+    counter-increment: forma;
+    content: '0' counter(forma);
+    display: block;
+    margin-bottom: 1.25rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    line-height: 1;
+    color: var(--accent-gold-muted);
+    transition: color 0.4s ease, -webkit-text-stroke-color 0.4s ease;
+}
+
+@supports (-webkit-text-stroke: 1px currentColor) {
+    .forms-steps li::before {
+        color: transparent;
+        -webkit-text-stroke: 1px var(--accent-gold-muted);
+    }
+
+    .forms-steps li:hover::before {
+        -webkit-text-stroke-color: var(--accent-gold);
+        color: rgba(201, 169, 110, 0.12);
+    }
+}
+
+.forms-steps li:hover {
+    border-top-color: var(--accent-gold);
+}
+
+.forms-steps h3 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--text-body);
+}
+
+@media (max-width: 900px) {
+    .forms-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .forms-steps {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .forms-steps li {
+        display: flex;
+        align-items: baseline;
+        gap: 1.25rem;
+        padding: 1.25rem 0;
+    }
+
+    .forms-steps li::before {
+        margin-bottom: 0;
+        font-size: 1.8rem;
+        flex-shrink: 0;
+    }
+}
+
+/* --- Mapa týmové dynamiky: diagram --- */
+.map-diagram {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.map-diagram svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* pojistka, kdyby se popisky na jiném stroji vysázely o kus šířeji */
+    overflow: visible;
+}
+
+.map-rings polygon {
+    fill: none;
+    stroke: var(--accent-gold);
+    stroke-width: 1;
+    opacity: 0.16;
+}
+
+.map-rings polygon:first-child {
+    fill: rgba(201, 169, 110, 0.035);
+    opacity: 0.3;
+}
+
+.map-spokes line {
+    stroke: var(--accent-gold);
+    stroke-width: 1;
+    opacity: 0.22;
+}
+
+.map-hub {
+    fill: var(--accent-gold);
+}
+
+.map-nodes circle {
+    fill: var(--bg-deep);
+    stroke: var(--accent-gold);
+    stroke-width: 2;
+    transition: fill 0.4s ease;
+}
+
+.map-diagram:hover .map-nodes circle {
+    fill: var(--accent-gold);
+}
+
+.map-labels text {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 500;
+    fill: #E8B878;
+}
+
+/* seznam se ukáže místo diagramu na úzkých displejích */
+.map-list {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .map-diagram {
+        display: none;
+    }
+
+    .map-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        list-style: none;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .map-list li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.1rem 1.35rem;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-left: 2px solid var(--accent-gold);
+        font-family: 'Playfair Display', serif;
+        font-size: 1.05rem;
+        color: #E8B878;
+    }
+}
+
+/* --- Hero na mobilu -----------------------------------------------------
+   Fotka zabírala při výšce 50 % zhruba 61 % šířky displeje, takže jí text
+   ležel přes obličej. Zdroj má navíc jen 407x612 px, takže se roztahoval
+   skoro 3x a byl měkký. Zmenšení řeší obojí najednou.                   */
+@media (max-width: 768px) {
+    .hero-image {
+        height: 48%;
+    }
+
+    /* zlatý popisek leží přes fotku a stín rgba(0,0,0,0.3) na to nestačí */
+    .hero-label-fixed {
+        text-shadow: 0 1px 2px var(--bg-deep), 0 2px 14px rgba(3, 3, 3, 0.95);
+    }
+}
+
+@media (max-width: 510px) {
+    .hero-image {
+        height: 46%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-image {
+        height: 42%;
+    }
 }
